@@ -1,10 +1,13 @@
 package org.example.project
 
-import com.google.devrel.gmscore.tools.apk.arsc.BinaryResourceFile
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import io.github.vinceglb.filekit.compose.rememberFilePickerLauncher
 import io.github.vinceglb.filekit.core.PlatformFile
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -28,8 +31,6 @@ fun App() {
                 Text("Open file...")
             }
         } else {
-            LaunchedEffect(Unit) {
-            }
             Text("$file")
         }
     }

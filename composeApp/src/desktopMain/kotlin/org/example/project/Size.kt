@@ -24,8 +24,8 @@ value class Size(val bytes: Long) : Comparable<Size> {
     }
 }
 
-val Int.size: Size
+val Int.byteSize: Size
     get() = Size(toLong())
 
-val Long.size: Size
+val Long.byteSize: Size
     get() = Size(this)
