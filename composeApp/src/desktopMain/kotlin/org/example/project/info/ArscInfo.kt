@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.selection.DisableSelection
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
@@ -441,11 +442,13 @@ internal fun TextWithTip(text: String, modifier: Modifier = Modifier, tip: Strin
         TooltipArea(
             modifier = modifier,
             tooltip = {
-                Surface(
-                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
-                ) {
-                    Text(tip)
+                DisableSelection {
+                    Surface(
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
+                    ) {
+                        Text(tip)
+                    }
                 }
             }
         ) {
@@ -466,11 +469,13 @@ internal fun TextWithTip(text: AnnotatedString, modifier: Modifier = Modifier, t
         TooltipArea(
             modifier = modifier,
             tooltip = {
-                Surface(
-                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
-                    border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
-                ) {
-                    Text(tip)
+                DisableSelection {
+                    Surface(
+                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+                        border = BorderStroke(1.dp, MaterialTheme.colors.onBackground)
+                    ) {
+                        Text(tip)
+                    }
                 }
             }
         ) {
